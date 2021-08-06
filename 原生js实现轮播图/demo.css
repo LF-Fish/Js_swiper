@@ -1,0 +1,96 @@
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .banner {
+        position: relative;
+        margin: 100px;
+        width: 400px;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .img_box {
+        position: absolute;
+        left: 0;
+        top: 0;
+        /* html中的第一张图片不是我们想要显示，第二张才是我们轮播图的第一张图片因此要让这排图片往左移动一张图片的距离 */
+        transform: translateX(-400px);
+    }
+
+    .img_box li {
+        float: left;
+        list-style: none;
+    }
+
+    /* 图片大小 */
+    .img_box li img {
+        width: 400px;
+        height: 300px;
+    }
+
+    /* 小圆点 */
+    .sel_box {
+        position: absolute;
+        bottom: 15px;
+        /* 水平居中 */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .sel_box li {
+        list-style: none;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: darkgrey;
+        margin-right: 3px;
+        border-radius: 100%;
+        transition: all 0.4s;
+        cursor: pointer;
+    }
+
+    /* 左箭头 */
+    .left_btn {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        line-height: 30px;
+        padding-left: 10px;
+        /* 将鼠标样式改为小手 */
+        cursor: pointer;
+        display: none;
+    }
+    .left_btn img{
+        width: 100%;
+        height: 100%;
+    }
+     /* 右箭头 */
+     .right_btn {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        line-height: 30px;
+        padding-right: 10px;
+        /* 将鼠标样式改为小手 */
+        cursor: pointer;
+        display: none;
+    }
+    .right_btn img{
+        width: 100%;
+        height: 100%;
+    }
+    /* 当前图片的小圆点样式 */
+    .sel_box .cur{
+        background-color: gray !important;
+        transform: scale(1.3);
+    }
